@@ -31,7 +31,7 @@ $wraps: nowrap, wrap, wrap-reverse;
 }
 
 // justify-content utilities
-$justify-contents: start, end, center, between, around;
+$justify-contents: start, end, center, space-between, space-around;
 @each $justify-content in $justify-contents {
   .justify-content-#{$justify-content} {
     justify-content: $justify-content !important;
