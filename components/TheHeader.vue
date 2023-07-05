@@ -21,7 +21,7 @@ const navLinks = ["home", "headphones", "speakers", "earphones"];
         <nav class="header-navs">
             <ul class="d-flex align-items-center">
                 <li v-for="link in navLinks" class="text-transform-uppercase weight-700">
-                    <nuxt-link :to="`/${link}`">{{ link }}</nuxt-link>
+                    <nuxt-link :to="link === 'home' ? '/' : `/${link}`">{{ link }}</nuxt-link>
                 </li>
             </ul>
         </nav>
