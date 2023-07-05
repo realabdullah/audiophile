@@ -1,8 +1,11 @@
 <script lang="ts" setup>
 const sideBarActive = ref(false);
 
+const emits = defineEmits(["toggle-menu"])
+
 const toggleSideBar = () => {
     sideBarActive.value = !sideBarActive.value;
+    emits("toggle-menu", sideBarActive.value);
 };
 </script>
 
