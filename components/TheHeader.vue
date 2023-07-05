@@ -4,6 +4,7 @@ const navLinks = ["home", "headphones", "speakers", "earphones"];
 
 <template>
     <header class="header d-flex align-items-center justify-content-space-between">
+        <!-- MOBILE -->
         <div class="header__left d-flex align-items-center">
             <Hamburger class="hamburger" />
 
@@ -12,6 +13,7 @@ const navLinks = ["home", "headphones", "speakers", "earphones"];
             </a>
         </div>
 
+        <!-- DESKTOP -->
         <a href="/" class="header__logo">
             <IconLogo />
         </a>
@@ -38,6 +40,7 @@ const navLinks = ["home", "headphones", "speakers", "earphones"];
 
     &__left {
         gap: 4.2rem;
+        color: $col-white;
 
         .hamburger {
             @media screen and (min-width: 768px) {
@@ -61,10 +64,10 @@ const navLinks = ["home", "headphones", "speakers", "earphones"];
 
     &__logo {
         display: none;
+        color: $col-white;
 
         @media screen and (max-width: 520px) {
             display: block;
-            color: $col-white;
             transition: color 0.3s ease-in-out;
 
             &:hover {
