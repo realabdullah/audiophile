@@ -5,4 +5,5 @@
 <template>
     <BaseHero />
     <slot />
+    <FooterWrapper />
 </template>

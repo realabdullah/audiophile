@@ -8,15 +8,15 @@ const navLinks = ["home", "headphones", "speakers", "earphones"];
         <div class="header__left d-flex align-items-center">
             <Hamburger class="hamburger" />
 
-            <a href="/" class="header__left-logo">
+            <nuxt-link to="/" class="header__left-logo">
                 <IconLogo />
-            </a>
+            </nuxt-link>
         </div>
 
         <!-- DESKTOP -->
-        <a href="/" class="header__logo">
+        <nuxt-link to="/" class="header__logo">
             <IconLogo />
-        </a>
+        </nuxt-link>
 
         <nav class="header-navs">
             <ul class="d-flex align-items-center">
