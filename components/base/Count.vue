@@ -22,6 +22,7 @@ const mutateCount = (action: string) => {
     height: 4.8rem;
     background: $col-silver;
     gap: 2rem;
+    padding: 0.7rem 1.5rem;
 
     button {
         color: $col-black;

@@ -6,8 +6,10 @@ const categories = [
     { title: "earphones", url: "/earphones", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569869/audiophile/desktop/home/h1oxbmbq5g78nth4lko7.png" },
 ];
 const showMenu = ref(false);
+const showCart = ref(false);
 
 const toggleMenu = (status: boolean) => showMenu.value = status;
+const toggleCart = (status: boolean) => showCart.value = status;
 </script>
 
 <template>
@@ -16,13 +18,13 @@ const toggleMenu = (status: boolean) => showMenu.value = status;
         <div class="header__left d-flex align-items-center">
             <Hamburger class="hamburger" @toggle-menu="toggleMenu" />
 
-            <nuxt-link to="/" class="header__left-logo">
+            <nuxt-link to="/" class="header__left-logo position-relative">
                 <IconLogo />
             </nuxt-link>
         </div>
 
         <!-- DESKTOP -->
-        <nuxt-link to="/" class="header__logo">
+        <nuxt-link to="/" class="header__logo position-relative">
             <IconLogo />
         </nuxt-link>
 
@@ -34,7 +36,7 @@ const toggleMenu = (status: boolean) => showMenu.value = status;
             </ul>
         </nav>
 
-        <button class="header__cart">
+        <button class="header__cart position-relative" @click="toggleCart(true)">
             <IconCart />
         </button>
 
@@ -54,11 +56,14 @@ const toggleMenu = (status: boolean) => showMenu.value = status;
             </div>
         </div>
     </header>
+
+    <!-- CART -->
+    <Cart v-if="showCart" @toggle-cart="toggleCart(false)" />
 </template>
 
 <style lang="scss" scoped>
 .header {
-    padding: 3.3rem;
+    padding: 3.3rem 0;
     background-color: transparent;
     border-bottom: 1px solid $col-white;
 

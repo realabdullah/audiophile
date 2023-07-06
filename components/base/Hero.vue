@@ -44,6 +44,7 @@ const height = computed(() => route.name === "home" ? "72.9rem" : "33.6rem");
     @media screen and (max-width: 768px) {
         background-image: url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1688412960/audiophile/desktop/home/wh1ieqou8f2cj23y6z05.png');
         position: relative;
+        z-index: 1;
 
         &::before {
             content: '';
@@ -68,8 +69,8 @@ const height = computed(() => route.name === "home" ? "72.9rem" : "33.6rem");
 .hero__section {
     background-color: #060606f0;
 
-    height: 100vh;
-    max-height: v-bind(height);
+    min-height: v-bind(height);
+    height: 100%;
 
     &-body {
         max-width: 110rem;
