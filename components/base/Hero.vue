@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-// const height = ref("72.9rem");
-const height = computed(() => route.name === "home" ? "72.9rem" : "33.6rem");
+const height = computed(() => route.params.category === "home" ? "72.9rem" : "33.6rem");
 </script>
 
 <template>
-    <section class="hero__section w-100" :class="route.name !== 'home' ? 'not-home' : 'home'">
+    <section class="hero__section w-100" :class="route.params.category !== 'home' ? 'not-home' : 'home'">
         <div class="hero__section-body">
             <TheHeader />
 
-            <div v-if="route.name === 'home'" class="hero__section-body--content d-flex flex-column align-items-start">
+            <div v-if="route.params.category === 'home'"
+                class="hero__section-body--content d-flex flex-column align-items-start">
                 <span class="new-product weight-400">NEW PRODUCT</span>
                 <h1 class="title weight-700">XX99 Mark II Headphones</h1>
                 <span class="detail weight-500">Experience natural, lifelike audio and exceptional build quality made for
@@ -19,7 +19,7 @@ const height = computed(() => route.name === "home" ? "72.9rem" : "33.6rem");
             </div>
 
             <div v-else>
-                <h1 class="text-center text-transform-uppercase">{{ route.name }}</h1>
+                <h1 class="text-center text-transform-uppercase">{{ route.params.category }}</h1>
             </div>
         </div>
     </section>
