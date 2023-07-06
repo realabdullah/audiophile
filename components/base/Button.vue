@@ -2,14 +2,24 @@
 interface ButtonProps {
     variant: 'solid' | 'outline' | 'link';
     text: string;
+    type: 'button' | 'link';
+    url?: string;
 };
 
-defineProps<ButtonProps>();
+withDefaults(defineProps<ButtonProps>(), {
+    variant: 'solid',
+    text: 'Button',
+    type: 'button',
+    url: '#'
+});
 </script>
 
 <template>
-    <button class="weight-700 text-transform-uppercase text-wrap-nowrap text-center"
+    <button v-if="type === 'button'" class="weight-700 text-transform-uppercase text-wrap-nowrap text-center"
         :class="[variant, { 'btn w-100': variant !== 'link' }]">{{ text }}</button>
+
+    <a v-else :href="url" class="weight-700 text-transform-uppercase text-wrap-nowrap text-center"
+        :class="[variant, { 'btn w-100': variant !== 'link' }]">{{ text }}</a>
 </template>
 
 <style lang="scss" scoped>
