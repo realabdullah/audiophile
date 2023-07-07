@@ -9,6 +9,8 @@ interface Product {
 const route = useRoute();
 const products = ref<Product[]>([]);
 
+useHead({ title: `${route.params.category} - Audiophile` });
+
 const { data, error } = await useFetch(`/api/category/${route.params.category}`);
 if (error.value) {
     throw new Error(error.value.message);

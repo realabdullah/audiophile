@@ -3,8 +3,8 @@ const route = useRoute();
 </script>
 
 <template>
-    <Categories v-if="route.name !== 'home'" />
-    <section class="container">
+    <Categories v-if="route.name !== 'home' && route.name !== 'checkout'" />
+    <section v-if="route.name !== 'checkout'" class="container">
         <div class="container__content d-flex align-items-center justify-content-space-between">
             <div class="container__content-left">
                 <h1 class="weight-700 text-transform-uppercase">Bringing you the <span>best</span> audio gear</h1>

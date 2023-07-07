@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 interface BaseRadioProps {
+    name: string;
     label: string;
     for: string;
 }
@@ -9,8 +10,8 @@ defineProps<BaseRadioProps>();
 
 <template>
     <div class="radio">
-        <input class="d-none" :name="for" :id="for" type="radio" />
-        <label :for="for" class="d-block weight-700 w-100 text-wrap-nowrap position-relative">
+        <input class="d-none" :name="name" :id="for" type="radio" />
+        <label :for=" for" class="d-block weight-700 w-100 text-wrap-nowrap position-relative">
             <span>{{ label }}</span>
         </label>
     </div>
@@ -31,7 +32,6 @@ defineProps<BaseRadioProps>();
     }
 
     label {
-        max-width: 30.9rem;
         padding: 1.8rem 1.6rem;
         background: transparent;
         border: 1px solid $col-shadeOfGray;

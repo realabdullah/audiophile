@@ -19,6 +19,8 @@ if (error.value) {
 }
 
 product.value = data.value as Product;
+
+useHead({ title: `${product.value.name} - Audiophile` });
 </script>
 
 <template>

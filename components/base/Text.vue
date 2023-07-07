@@ -4,24 +4,27 @@ interface TextProps {
     for: string;
     placeholder: string;
     error: boolean;
+    type?: "text" | "number" | "email" | "tel";
 };
 
-defineProps<TextProps>();
+withDefaults(defineProps<TextProps>(), {
+    type: "text"
+});
 </script>
 
 <template>
     <label :for="for" class="d-block w-100">
-        <p class="label d-flex align-items-center justify-content-space-between" :class="{ error }">
+        <p class="label d-flex align-items-center justify-content-space-between" :class=" { error } ">
             <span class="weight-700">{{ label }}</span>
-            <span v-if="error" class="weight-500">Wrong format</span>
+            <span v-if=" error " class="weight-500">Wrong format</span>
         </p>
-        <input type="text" :placeholder="placeholder" class="w-100" :class="{ 'i-error': error }">
+        <input :type=" type " :placeholder=" placeholder " class="w-100" :class=" { 'i-error': error } ">
     </label>
 </template>
 
 <style lang="scss" scoped>
 label {
-    max-width: 30.9rem;
+    // max-width: 30.9rem;
 
     .label {
         margin-bottom: 0.9rem;
