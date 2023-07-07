@@ -1,28 +1,22 @@
 <script lang="ts" setup>
-interface ProductProp {
-    product: {
-        name: string;
-        description: string;
-        image: string;
-        price: string;
-        isNew: boolean;
-        features: string;
-        includes: {
-            quantity: number;
-            item: string;
-        }[];
-        gallery: string[];
-        others: {
-            name: string;
-            image: string;
-            slug: string;
-        }[];
-    };
-}
-
-defineProps<ProductProp>();
+const props = defineProps<{
+    product: Product;
+}>();
 
 const router = useRouter();
+const { addToCart } = useCart();
+const count = ref(1);
+
+const updateProductQuantity = (action: string) => {
+    if (action === "increment") count.value++;
+    if (action === "decrement" && count.value > 1) count.value--;
+};
+
+const addProductToCart = async () => {
+    const productToAdd = { ...props.product, quantity: count.value };
+    await addToCart(productToAdd);
+    count.value = 1;
+};
 </script>
 
 <template>
@@ -39,8 +33,8 @@ const router = useRouter();
                 <span class="price weight-700">$ {{ product.price }}</span>
 
                 <div class="product__info-cta d-flex align-items-center">
-                    <BaseCount />
-                    <BaseButton variant="solid" text="ADD TO CART" />
+                    <BaseCount :count="count" @update-count="updateProductQuantity" />
+                    <BaseButton variant="solid" text="ADD TO CART" @click="addProductToCart" />
                 </div>
             </div>
         </div>

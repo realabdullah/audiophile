@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   app: {
     head: {
       meta: [
@@ -27,6 +28,13 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  imports: {
+    dirs: ["store"],
+  },
+  modules: ["@pinia/nuxt"],
+  pinia: {
+    autoImports: ["defineStore", "storeToRefs"],
   },
   devtools: { enabled: true },
 });

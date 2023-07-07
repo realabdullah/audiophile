@@ -1,5 +1,23 @@
 <script lang="ts" setup>
 defineEmits(["toggle-cart"]);
+
+const { addToCart, getCart } = useCart();
+const { cart } = storeToRefs(useStore());
+
+const totalPrice = computed(() => {
+    return cart.value.reduce((acc: number, curr: { price: string; quantity: number; }) => {
+        return acc + Number(curr.price) * curr.quantity;
+    }, 0);
+});
+
+const updateProductQuantity = async (action: string, slug: string) => {
+    const product = cart.value.find((item: { slug: string; }) => item.slug === slug) as Product;
+    if (!product || product.quantity === 1 && action === "decrease") return;
+    await addToCart(product, action);
+    cart.value = await getCart();
+};
+
+cart.value = await getCart();
 </script>
 
 <template>
@@ -7,60 +25,26 @@ defineEmits(["toggle-cart"]);
         <div class="cart d-flex flex-column w-100">
             <!-- CART HEADER -->
             <div class="cart__header d-flex align-items-center justify-content-space-between">
-                <h2 class="text-transform-uppercase weight-700">cart (3)</h2>
+                <h2 class="text-transform-uppercase weight-700">cart ({{ cart.length }})</h2>
                 <button class="cart__header-close">Remove all</button>
             </div>
 
             <!-- CART ITEMS -->
             <div class="cart__items d-flex flex-column">
-                <div class="cart__items-item d-flex align-items-center justify-content-space-between">
+                <div v-for="item in cart" class="cart__items-item d-flex align-items-center justify-content-space-between">
                     <div class="cart__items-item-content d-flex align-items-center">
                         <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                            <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png"
-                                alt="">
+                            <img :src="item.image" :alt="item.name">
                         </div>
                         <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                            <p class="weight-700">XX99 MK II</p>
-                            <span class="weight-700">$ 2,999</span>
+                            <p class="weight-700">{{ item.name }}</p>
+                            <span class="weight-700">$ {{ item.price }}</span>
                         </div>
                     </div>
 
                     <div class="cart__items-item-count">
-                        <BaseCount />
-                    </div>
-                </div>
-
-                <div class="cart__items-item d-flex align-items-center justify-content-space-between">
-                    <div class="cart__items-item-content d-flex align-items-center">
-                        <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                            <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png"
-                                alt="">
-                        </div>
-                        <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                            <p class="weight-700">XX99 MK II</p>
-                            <span class="weight-700">$ 2,999</span>
-                        </div>
-                    </div>
-
-                    <div class="cart__items-item-count">
-                        <BaseCount />
-                    </div>
-                </div>
-
-                <div class="cart__items-item d-flex align-items-center justify-content-space-between">
-                    <div class="cart__items-item-content d-flex align-items-center">
-                        <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                            <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png"
-                                alt="">
-                        </div>
-                        <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                            <p class="weight-700">XX99 MK II</p>
-                            <span class="weight-700">$ 2,999</span>
-                        </div>
-                    </div>
-
-                    <div class="cart__items-item-count">
-                        <BaseCount />
+                        <BaseCount usage="cart" :count="item.quantity"
+                            @update-count="updateProductQuantity($event, item.slug)" />
                     </div>
                 </div>
             </div>
@@ -68,7 +52,7 @@ defineEmits(["toggle-cart"]);
             <!-- CART TOTAL -->
             <div class="cart__total d-flex align-items-center justify-content-space-between">
                 <p class="weight-500">TOTAL</p>
-                <span class="weight-700">$ 5,997</span>
+                <span class="weight-700">$ {{ totalPrice }}</span>
             </div>
 
             <!-- CHECKOUT BTN -->

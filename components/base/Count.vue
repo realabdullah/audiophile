@@ -1,24 +1,31 @@
 <script lang="ts" setup>
-const count = ref(1);
+interface CountProps {
+    count: number;
+    usage?: string;
+}
 
-const mutateCount = (action: string) => {
-    if (action === "increment") count.value++;
-    else if (count.value <= 1) return;
-    else count.value--;
-};
+type CountEmits = "increment" | "decrement";
+
+withDefaults(defineProps<CountProps>(), {
+    count: 1,
+    usage: "page",
+});
+const emits = defineEmits<{ (event: "update-count", tyoe: CountEmits): void }>();
+
+const mutateCount = (type: CountEmits) => emits("update-count", type);
 </script>
 
 <template>
-    <div class="count d-flex align-items-center justify-content-center">
-         <button @click="mutateCount('decrement')" :class="{ 'in-active': count <= 1 }">-</button>
-         <span>{{ count }}</span>
-         <button @click="mutateCount('increment')">+</button>
+    <div class="count d-flex align-items-center justify-content-center"
+        :style="`width: ${usage === 'page' ? '14rem' : '8rem'}`">
+        <button @click="mutateCount('decrement')" :class="{ 'in-active': count <= 1 }" :disabled="count <= 1">-</button>
+        <span>{{ count }}</span>
+        <button @click="mutateCount('increment')">+</button>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .count {
-    width: 14rem;
     height: 4.8rem;
     background: $col-silver;
     gap: 2rem;
