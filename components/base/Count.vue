@@ -10,7 +10,7 @@ withDefaults(defineProps<CountProps>(), {
     count: 1,
     usage: "page",
 });
-const emits = defineEmits<{ (event: "update-count", tyoe: CountEmits): void }>();
+const emits = defineEmits<{ (event: "update-count", type: CountEmits): void }>();
 
 const mutateCount = (type: CountEmits) => emits("update-count", type);
 </script>

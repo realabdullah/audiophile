@@ -2,6 +2,8 @@
 definePageMeta({
     layout: "product"
 });
+
+useHead({ title: "Checkout - Audiophiles" })
 </script>
 
 <template>

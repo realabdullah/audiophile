@@ -1,5 +1,20 @@
 <script lang="ts" setup>
+const { getCart } = useCart();
+const { cart } = storeToRefs(useStore());
 
+const paymentOption = ref("");
+
+const totalPrice = computed(() => {
+    return cart.value.reduce((acc: number, curr: { price: string; quantity: number; }) => {
+        return acc + Number(curr.price) * curr.quantity;
+    }, 0);
+});
+
+const vat = computed(() => (totalPrice.value * 0.2).toFixed(2));
+
+const grandTotal = computed(() => (Number(totalPrice.value) + Number(vat.value) + 50).toFixed(2));
+
+cart.value = await getCart();
 </script>
 
 <template>
@@ -43,15 +58,24 @@
                         <p class="label weight-700">Payment Method</p>
 
                         <div>
-                            <BaseRadio style="margin-bottom: 2.4rem;" label="e-Money" name="paymentoption" for="emoney" />
-                            <BaseRadio label="Cash on Delivery" name="paymentoption" for="cod" />
+                            <BaseRadio v-model="paymentOption" style="margin-bottom: 2.4rem;" label="e-Money"
+                                name="paymentoption" for="emoney" value="emoney" @update-value="paymentOption = $event" />
+                            <BaseRadio v-model="paymentOption" label="Cash on Delivery" name="paymentoption" for="cod"
+                                value="cod" @update-value="paymentOption = $event" />
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <BaseText label="e-Money Number" for="emoney" placeholder="238521993" type="number"
+                    <div v-show="paymentOption !== '' && paymentOption === 'emoney'" class="form-group">
+                        <BaseText label="e-Money Number" for="emoney" placeholder="238521993" type="number" value=""
                             :error="false" />
-                        <BaseText label="e-Money PIN" for="epin" placeholder="6891" type="number" :error="false" />
+                        <BaseText label="e-Money PIN" for="epin" placeholder="6891" type="number" value="" :error="false" />
+                    </div>
+
+                    <div v-show="paymentOption !== '' && paymentOption === 'cod'" class="cod d-flex align-items-center">
+                        <IconCod />
+                        <p>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at
+                            your residence. Just make sure your address is correct so that your order will not be cancelled.
+                        </p>
                     </div>
                 </form>
             </div>
@@ -62,47 +86,19 @@
 
                 <!-- CART ITEMS -->
                 <div class="cart__items d-flex flex-column">
-                    <div class="cart__items-item d-flex align-items-center justify-content-space-between">
+                    <div v-for="item in cart"
+                        class="cart__items-item d-flex align-items-center justify-content-space-between">
                         <div class="cart__items-item-content d-flex align-items-center">
                             <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png"
-                                    alt="">
+                                <img :src="item.image" :alt="item.name">
                             </div>
                             <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                                <p class="weight-700">XX99 MK II</p>
-                                <span class="weight-700">$ 2,999</span>
+                                <p class="weight-700">{{ item.name }}</p>
+                                <span class="weight-700">$ {{ formatAmount(item.price) }}</span>
                             </div>
                         </div>
 
-                        <span class="cart__items-item-count weight-700">x1</span>
-                    </div>
-                    <div class="cart__items-item d-flex align-items-center justify-content-space-between">
-                        <div class="cart__items-item-content d-flex align-items-center">
-                            <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png"
-                                    alt="">
-                            </div>
-                            <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                                <p class="weight-700">XX99 MK II</p>
-                                <span class="weight-700">$ 2,999</span>
-                            </div>
-                        </div>
-
-                        <span class="cart__items-item-count weight-700">x1</span>
-                    </div>
-                    <div class="cart__items-item d-flex align-items-center justify-content-space-between">
-                        <div class="cart__items-item-content d-flex align-items-center">
-                            <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png"
-                                    alt="">
-                            </div>
-                            <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                                <p class="weight-700">XX99 MK II</p>
-                                <span class="weight-700">$ 2,999</span>
-                            </div>
-                        </div>
-
-                        <span class="cart__items-item-count weight-700">x1</span>
+                        <span class="cart__items-item-count weight-700">x{{ item.quantity }}</span>
                     </div>
                 </div>
 
@@ -110,7 +106,7 @@
                 <div style="margin-top: 3.2rem;"
                     class="cart__total d-flex align-items-center justify-content-space-between">
                     <p class="weight-500">TOTAL</p>
-                    <span class="weight-700">$ 5,997</span>
+                    <span class="weight-700">$ {{ formatAmount(totalPrice) }}</span>
                 </div>
 
                 <div style="margin-top: 0.7rem;"
@@ -122,13 +118,13 @@
                 <div style="margin-top: 0.7rem;"
                     class="cart__total d-flex align-items-center justify-content-space-between">
                     <p class="weight-500">VAT (INCLUDED)</p>
-                    <span class="weight-700">$ 1,079</span>
+                    <span class="weight-700">$ {{ formatAmount(vat) }}</span>
                 </div>
 
                 <div style="margin-top: 2.4rem;"
                     class="cart__total d-flex align-items-center justify-content-space-between">
                     <p class="weight-500">GRAND TOTAL</p>
-                    <span class="grand weight-700">$ 5,446</span>
+                    <span class="grand weight-700">$ {{ formatAmount(grandTotal) }}</span>
                 </div>
 
                 <!-- CHECKOUT BTN -->
@@ -199,6 +195,17 @@
                     .label {
                         color: $col-black;
                         @include font(1.2rem, 1.6rem);
+                    }
+                }
+
+                .cod {
+                    gap: 3.2rem;
+
+                    p {
+                        @include font(1.5rem, 2.5rem);
+                        font-weight: 500;
+                        color: $col-black;
+                        opacity: 0.5;
                     }
                 }
             }

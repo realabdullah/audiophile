@@ -52,7 +52,7 @@ cart.value = await getCart();
             <!-- CART TOTAL -->
             <div class="cart__total d-flex align-items-center justify-content-space-between">
                 <p class="weight-500">TOTAL</p>
-                <span class="weight-700">$ {{ totalPrice }}</span>
+                <span class="weight-700">$ {{ formatAmount(totalPrice) }}</span>
             </div>
 
             <!-- CHECKOUT BTN -->
