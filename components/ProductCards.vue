@@ -4,6 +4,7 @@ interface Product {
     description: string;
     image: string;
     isNew: boolean;
+    slug: string;
 }
 
 interface Products {
@@ -11,8 +12,6 @@ interface Products {
 }
 
 defineProps<Products>();
-
-const { hyphenate } = useHyphenate();
 
 const isEven = (index: number) => index % 2 === 0;
 </script>
@@ -28,7 +27,7 @@ const isEven = (index: number) => index % 2 === 0;
                 <span v-if="product.isNew" class="new weight-400">NEW PRODUCT</span>
                 <h2 class="text-transform-uppercase">{{ product.name }}</h2>
                 <p>{{ product.description }}</p>
-                <BaseButton variant="solid" text="See Product" type="link" :url="`/product/${hyphenate(product.name)}`" />
+                <BaseButton variant="solid" text="See Product" type="link" :url="`/product/${product.slug}`" />
             </div>
         </div>
     </div>

@@ -43,6 +43,10 @@ const categories = [
         border-radius: 0.8rem;
         padding-bottom: 3rem;
 
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
         &-card {
             gap: 1.5rem;
 

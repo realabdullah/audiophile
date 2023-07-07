@@ -9,7 +9,7 @@ const mutateCount = (action: string) => {
 </script>
 
 <template>
-    <div class="count w-100 d-flex align-items-center justify-content-center">
+    <div class="count d-flex align-items-center justify-content-center">
          <button @click="mutateCount('decrement')" :class="{ 'in-active': count <= 1 }">-</button>
          <span>{{ count }}</span>
          <button @click="mutateCount('increment')">+</button>
@@ -18,7 +18,7 @@ const mutateCount = (action: string) => {
 
 <style lang="scss" scoped>
 .count {
-    max-width: 12rem;
+    width: 14rem;
     height: 4.8rem;
     background: $col-silver;
     gap: 2rem;

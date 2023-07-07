@@ -2,7 +2,7 @@
 interface ButtonProps {
     variant: 'solid' | 'outline' | 'link';
     text: string;
-    type: 'button' | 'link';
+    type?: 'button' | 'link';
     url?: string;
 };
 
@@ -29,8 +29,8 @@ button {
 }
 
 .btn {
-    max-width: 160px;
-    padding: 1.5rem 0;
+    max-width: 16rem;
+    padding: 1.5rem;
 }
 
 .solid {
