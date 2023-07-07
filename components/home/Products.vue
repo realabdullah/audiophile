@@ -12,20 +12,20 @@
                 <h1 class="weight-700">ZX9 SPEAKER</h1>
                 <p class="weight-500">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable
                     sound.</p>
-                <BaseButton class="btn" variant="solid" text="See Product" />
+                <BaseButton class="btn" variant="solid" text="See Product" type="link" url="/product/zx9-speaker" />
             </div>
         </div>
 
         <div class="second__product d-flex flex-column align-items-start justify-content-center">
             <h1 class="weight-700">ZX7 SPEAKER</h1>
-            <BaseButton class="btn" variant="solid" text="See Product" />
+            <BaseButton class="btn" variant="solid" text="See Product" type="link" url="/product/zx7-speaker" />
         </div>
 
         <div class="earphone d-flex align-items-stretch">
             <div class="earphone-image"></div>
             <div class="earphone-content d-flex flex-column align-items-start justify-content-center">
                 <h1 class="weight-700">YX1 EARPHONES</h1>
-                <BaseButton class="btn" variant="solid" text="See Product" />
+                <BaseButton class="btn" variant="solid" text="See Product" type="link" url="/product/yx1-earphones" />
             </div>
         </div>
     </div>

@@ -72,7 +72,7 @@ defineEmits(["toggle-cart"]);
             </div>
 
             <!-- CHECKOUT BTN -->
-            <BaseButton class="checkout w-100" variant="solid" text="checkout" />
+            <BaseButton class="checkout w-100" variant="solid" text="checkout" type="link" url="/checkout" />
         </div>
     </div>
 
