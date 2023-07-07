@@ -38,7 +38,7 @@ cart.value = await getCart();
                         </div>
                         <div class="cart__items-item-content-info d-flex flex-column align-items-start">
                             <p class="weight-700">{{ item.name }}</p>
-                            <span class="weight-700">$ {{ item.price }}</span>
+                            <span class="weight-700">$ {{ formatAmount(item.price) }}</span>
                         </div>
                     </div>
 

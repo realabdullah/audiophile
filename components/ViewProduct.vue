@@ -30,7 +30,7 @@ const addProductToCart = async () => {
                 <span v-if="product.isNew" class="new weight-400">NEW PRODUCT</span>
                 <h2 class="text-transform-uppercase">{{ product.name }}</h2>
                 <p>{{ product.description }}</p>
-                <span class="price weight-700">$ {{ product.price }}</span>
+                <span class="price weight-700">$ {{ formatAmount(product.price) }}</span>
 
                 <div class="product__info-cta d-flex align-items-center">
                     <BaseCount :count="count" @update-count="updateProductQuantity" />
