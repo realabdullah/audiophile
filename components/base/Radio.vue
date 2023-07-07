@@ -11,7 +11,7 @@ defineProps<BaseRadioProps>();
 <template>
     <div class="radio">
         <input class="d-none" :name="name" :id="for" type="radio" />
-        <label :for=" for" class="d-block weight-700 w-100 text-wrap-nowrap position-relative">
+        <label :for="for" class="d-block weight-700 w-100 text-wrap-nowrap position-relative">
             <span>{{ label }}</span>
         </label>
     </div>

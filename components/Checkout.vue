@@ -132,7 +132,7 @@
                 </div>
 
                 <!-- CHECKOUT BTN -->
-                <BaseButton class="checkout w-100" variant="solid" text="CONTINUE & PAY" />
+                <BaseButton class="checkout-btn w-100" variant="solid" text="CONTINUE & PAY" />
             </div>
         </div>
     </div>
@@ -285,7 +285,7 @@
                 }
             }
 
-            .checkout {
+            .checkout-btn {
                 margin-top: 3.2rem;
                 max-width: 100%;
             }
