@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 const navLinks = ["home", "headphones", "speakers", "earphones"];
 const socials = ["facebook", "twitter", "instagram"];
+
+// get current year
+const currentYear = new Date().getFullYear();
 </script>
 
 <template>
@@ -20,7 +23,7 @@ const socials = ["facebook", "twitter", "instagram"];
                     sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our
                     demo facility - we’re open 7 days a week.</span>
                 <div class="social-copyright d-flex align-items-center justify-content-space-between">
-                    <p>Copyright 2021. All Rights Reserved</p>
+                    <p>Copyright {{ currentYear }}. All Rights Reserved</p>
                     <div class="socials d-flex align-items-center">
                         <a v-for="social in socials" :href="`https://www.${social}.com/`" target="_blank"
                             rel="noopener noreferrer">
