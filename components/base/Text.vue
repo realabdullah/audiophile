@@ -40,6 +40,10 @@ label {
         @include font(1.4rem, 1.9rem);
         transition: border-color 0.2s ease-in-out;
 
+        @supports (-webkit-touch-callout: none) {
+            font-size: 2.05rem;
+        }
+
         &:focus {
             outline: none;
             border-color: $col-burntSienna;
