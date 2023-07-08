@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const navLinks = ["home", "headphones", "speakers", "earphones"];
 const categories = [
-    { title: "headphones", url: "/headphones", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.png" },
-    { title: "speakers", url: "/speakers", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569870/audiophile/desktop/home/ukfej69hrqfpuftboxos.png" },
-    { title: "earphones", url: "/earphones", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569869/audiophile/desktop/home/h1oxbmbq5g78nth4lko7.png" },
+    { title: "headphones", url: "/headphones", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569867/audiophile/desktop/home/gotlzjvxzman8du2qohz.webp" },
+    { title: "speakers", url: "/speakers", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569870/audiophile/desktop/home/ukfej69hrqfpuftboxos.webp" },
+    { title: "earphones", url: "/earphones", image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569869/audiophile/desktop/home/h1oxbmbq5g78nth4lko7.webp" },
 ];
 const showMenu = ref(false);
 const showCart = ref(false);

@@ -4,7 +4,7 @@ export default [
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     image:
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646360/audiophile/products/bstkc6wsqtlhhmbxpy3c.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646360/audiophile/products/bstkc6wsqtlhhmbxpy3c.webp",
     isNew: true,
     category: "headphones",
     slug: "xx99-mark-two-headphones",
@@ -38,25 +38,25 @@ export default [
         slug: "xx99-mark-one-headphones",
         name: "XX99 Mark I",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.webp",
       },
       {
         slug: "xx59-headphones",
         name: "XX59",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.webp",
       },
       {
         slug: "zx9-speaker",
         name: "ZX9 Speaker",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.webp",
       },
     ],
     gallery: [
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715314/audiophile/products/mark%20ii/smep4jnhfhydxfon4aue.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715327/audiophile/products/mark%20ii/swuxq1q9ouky70z3ercr.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715313/audiophile/products/mark%20ii/jzfyaochkfsqifmslyql.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715314/audiophile/products/mark%20ii/smep4jnhfhydxfon4aue.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715327/audiophile/products/mark%20ii/swuxq1q9ouky70z3ercr.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715313/audiophile/products/mark%20ii/jzfyaochkfsqifmslyql.webp",
     ],
   },
   {
@@ -64,7 +64,7 @@ export default [
     description:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     image:
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.webp",
     isNew: false,
     category: "headphones",
     slug: "xx99-mark-one-headphones",
@@ -94,25 +94,25 @@ export default [
         slug: "xx99-mark-two-headphones",
         name: "XX99 Mark II",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646360/audiophile/products/bstkc6wsqtlhhmbxpy3c.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646360/audiophile/products/bstkc6wsqtlhhmbxpy3c.webp",
       },
       {
         slug: "xx59-headphones",
         name: "XX59",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.webp",
       },
       {
         slug: "zx9-speaker",
         name: "ZX9 Speaker",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.webp",
       },
     ],
     gallery: [
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715492/audiophile/products/mark%20i/eshqdpjdcu5vzclcokxo.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715489/audiophile/products/mark%20i/kobapcdhxzcbxf1efkxv.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715484/audiophile/products/mark%20i/ksft2xaomlybisjvzfgu.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715492/audiophile/products/mark%20i/eshqdpjdcu5vzclcokxo.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715489/audiophile/products/mark%20i/kobapcdhxzcbxf1efkxv.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715484/audiophile/products/mark%20i/ksft2xaomlybisjvzfgu.webp",
     ],
   },
   {
@@ -120,7 +120,7 @@ export default [
     description:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     image:
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.webp",
     isNew: false,
     category: "headphones",
     slug: "xx59-headphones",
@@ -150,25 +150,25 @@ export default [
         slug: "xx99-mark-two-headphones",
         name: "XX99 Mark II",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646360/audiophile/products/bstkc6wsqtlhhmbxpy3c.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646360/audiophile/products/bstkc6wsqtlhhmbxpy3c.webp",
       },
       {
         slug: "xx99-mark-one-headphones",
         name: "XX99 Mark I",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.webp",
       },
       {
         slug: "zx9-speaker",
         name: "ZX9 Speaker",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.webp",
       },
     ],
     gallery: [
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715635/audiophile/products/xx59/es8uivlam0loioqp2cfa.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715627/audiophile/products/xx59/lpwqkdqc06wkq7qcxaqr.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715626/audiophile/products/xx59/nqkndyfd2lvbgwz0zygr.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715635/audiophile/products/xx59/es8uivlam0loioqp2cfa.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715627/audiophile/products/xx59/lpwqkdqc06wkq7qcxaqr.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715626/audiophile/products/xx59/nqkndyfd2lvbgwz0zygr.webp",
     ],
   },
   {
@@ -176,7 +176,7 @@ export default [
     description:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     image:
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.webp",
     isNew: true,
     category: "speakers",
     slug: "zx9-speaker",
@@ -210,25 +210,25 @@ export default [
         slug: "zx7-speaker",
         name: "ZX7 Speaker",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/iiidlu5qfewan64jw3fa.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/iiidlu5qfewan64jw3fa.webp",
       },
       {
         slug: "xx99-mark-one-headphones",
         name: "XX99 Mark I",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.webp",
       },
       {
         slug: "xx59-headphones",
         name: "XX59",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.webp",
       },
     ],
     gallery: [
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715754/audiophile/products/zx9/r7gnlkghagqeobngm0kf.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715760/audiophile/products/zx9/ykx7cmxanuilkdr1oesf.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715754/audiophile/products/zx9/nmkafl4gbmzja2dxcram.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715754/audiophile/products/zx9/r7gnlkghagqeobngm0kf.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715760/audiophile/products/zx9/ykx7cmxanuilkdr1oesf.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715754/audiophile/products/zx9/nmkafl4gbmzja2dxcram.webp",
     ],
   },
   {
@@ -236,7 +236,7 @@ export default [
     description:
       "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
     image:
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/iiidlu5qfewan64jw3fa.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/iiidlu5qfewan64jw3fa.webp",
     isNew: false,
     category: "speakers",
     slug: "zx7-speaker",
@@ -270,25 +270,25 @@ export default [
         slug: "zx9-speaker",
         name: "ZX9 Speaker",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.webp",
       },
       {
         slug: "xx99-mark-one-headphones",
         name: "XX99 Mark I",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.webp",
       },
       {
         slug: "xx59-headphones",
         name: "XX59",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.webp",
       },
     ],
     gallery: [
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715900/audiophile/products/zx7/gefztkcxkoszq1o9pqjb.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715907/audiophile/products/zx7/uct8gjumztcgel6dtomj.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715900/audiophile/products/zx7/pteppi7rb2qfhuqmqerg.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715900/audiophile/products/zx7/gefztkcxkoszq1o9pqjb.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715907/audiophile/products/zx7/uct8gjumztcgel6dtomj.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688715900/audiophile/products/zx7/pteppi7rb2qfhuqmqerg.webp",
     ],
   },
   {
@@ -296,7 +296,7 @@ export default [
     description:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     image:
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648497/audiophile/products/b9uswnre2wymtjiexpcb.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648497/audiophile/products/b9uswnre2wymtjiexpcb.webp",
     isNew: true,
     category: "earphones",
     slug: "yx1-earphones",
@@ -330,25 +330,25 @@ export default [
         slug: "xx99-mark-one-headphones",
         name: "XX99 Mark I",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646361/audiophile/products/hjqrx9siy155rteimdtd.webp",
       },
       {
         slug: "xx59-headphones",
         name: "XX59",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688646359/audiophile/products/jo1lt9wmmmjjrjcclnpi.webp",
       },
       {
         slug: "zx9-speaker",
         name: "ZX9 Speaker",
         image:
-          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.png",
+          "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688648202/audiophile/products/yzqbg76hc1earixs1sbn.webp",
       },
     ],
     gallery: [
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688716076/audiophile/products/yx1/ze4uwxhwtpe8cznvtt5k.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688716075/audiophile/products/yx1/rsaz39ugu4a6o6bdsmz1.png",
-      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688716076/audiophile/products/yx1/zdicyhbc21bf6x6thkhc.png",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688716076/audiophile/products/yx1/ze4uwxhwtpe8cznvtt5k.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688716075/audiophile/products/yx1/rsaz39ugu4a6o6bdsmz1.webp",
+      "https://res.cloudinary.com/dxvhsze0l/image/upload/v1688716076/audiophile/products/yx1/zdicyhbc21bf6x6thkhc.webp",
     ],
   },
 ];

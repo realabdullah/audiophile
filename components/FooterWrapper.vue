@@ -15,7 +15,7 @@ const route = useRoute();
             </div>
 
             <div class="container__content-right">
-                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688413129/audiophile/desktop/home/iqw6vlxk4gvi4zk0fzzw.png"
+                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688413129/audiophile/desktop/home/iqw6vlxk4gvi4zk0fzzw.webp"
                     alt="person on headgear">
             </div>
         </div>

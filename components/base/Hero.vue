@@ -36,13 +36,13 @@ const height = computed(() => route.name === "home" ? "72.9rem" : "33.6rem");
 }
 
 .home {
-    background-image: url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1688561385/audiophile/desktop/uvk2bszjehwhq0scdx9k.png');
+    background-image: url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1688561385/audiophile/desktop/uvk2bszjehwhq0scdx9k.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     @media screen and (max-width: 768px) {
-        background-image: url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1688412960/audiophile/desktop/home/wh1ieqou8f2cj23y6z05.png');
+        background-image: url('https://res.cloudinary.com/dxvhsze0l/image/upload/v1688412960/audiophile/desktop/home/wh1ieqou8f2cj23y6z05.webp');
         position: relative;
         z-index: 1;
 

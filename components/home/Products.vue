@@ -6,7 +6,7 @@
     <div class="home__products">
         <div class="home__products-product w-100 d-flex align-items-center justify-content-end position-relative">
             <img class="position-absolute"
-                src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569870/audiophile/desktop/home/ukfej69hrqfpuftboxos.png"
+                src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1688569870/audiophile/desktop/home/ukfej69hrqfpuftboxos.webp"
                 alt="speaker">
             <div class="home__products-product-info">
                 <h1 class="weight-700">ZX9 SPEAKER</h1>
@@ -105,7 +105,7 @@
         border-radius: 0.8rem;
         gap: 3.2rem;
         height: 32rem;
-        background: url("https://res.cloudinary.com/dxvhsze0l/image/upload/v1688413129/audiophile/desktop/home/d6pwr9y0vffbi5jljqqe.png") no-repeat center center;
+        background: url("https://res.cloudinary.com/dxvhsze0l/image/upload/v1688413129/audiophile/desktop/home/d6pwr9y0vffbi5jljqqe.webp") no-repeat center center;
         padding: 0 9.5rem;
 
         @media screen and (max-width: 600px) {
@@ -123,7 +123,7 @@
         &-image {
             width: 54rem;
             height: 32rem;
-            background: url("https://res.cloudinary.com/dxvhsze0l/image/upload/v1688413128/audiophile/desktop/home/gtjwqsznwy0b8hptjvkr.png") no-repeat center center;
+            background: url("https://res.cloudinary.com/dxvhsze0l/image/upload/v1688413128/audiophile/desktop/home/gtjwqsznwy0b8hptjvkr.webp") no-repeat center center;
             background-size: cover;
             border-radius: 0.8rem;
 
