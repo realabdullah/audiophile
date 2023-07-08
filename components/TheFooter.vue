@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const navLinks = ["home", "headphones", "speakers", "earphones"];
-const socials = ["facebook", "twitter", "instagram"];
+const socials = ["facebook", "twitter", "instagram"] as const;
 
 // get current year
 const currentYear = new Date().getFullYear();
@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
     <footer class="footer w-100">
         <div class="footer__content d-flex align-items-start justify-content-space-between">
             <div class="footer__content-left d-flex flex-column align-items-start">
-                <nuxt-link to="/" class="logo">
+                <nuxt-link to="/" class="logo" aria-label="logo">
                     <IconLogo />
                 </nuxt-link>
                 <ul class="mobile d-flex align-items-center">
@@ -26,7 +26,7 @@ const currentYear = new Date().getFullYear();
                     <p>Copyright {{ currentYear }}. All Rights Reserved</p>
                     <div class="socials d-flex align-items-center">
                         <a v-for="social in socials" :href="`https://www.${social}.com/`" target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer" :aria-label="social">
                             <IconSocial :platform="social" />
                         </a>
                     </div>
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
 
                 <div class="footer__content-right-socials d-flex align-items-center">
                     <a v-for="social in socials" :href="`https://www.${social}.com/`" target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer" :aria-label="social">
                         <IconSocial :platform="social" />
                     </a>
                 </div>

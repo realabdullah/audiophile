@@ -18,13 +18,13 @@ const toggleCart = (status: boolean) => showCart.value = status;
         <div class="header__left d-flex align-items-center">
             <Hamburger class="hamburger" @toggle-menu="toggleMenu" />
 
-            <nuxt-link to="/" class="header__left-logo position-relative">
+            <nuxt-link to="/" class="header__left-logo position-relative" aria-label="logo">
                 <IconLogo />
             </nuxt-link>
         </div>
 
         <!-- DESKTOP -->
-        <nuxt-link to="/" class="header__logo position-relative">
+        <nuxt-link to="/" class="header__logo position-relative" aria-label="logo">
             <IconLogo />
         </nuxt-link>
 
@@ -36,7 +36,7 @@ const toggleCart = (status: boolean) => showCart.value = status;
             </ul>
         </nav>
 
-        <button class="header__cart position-relative" @click="toggleCart(true)">
+        <button class="header__cart position-relative" aria-label="open cart" @click="toggleCart(true)">
             <IconCart />
         </button>
 
