@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { getCart } = useCart();
+let getCartItems: () => Promise<CartItem[]>;
 const { cart } = storeToRefs(useStore());
 
 const paymentOption = ref("");
@@ -15,7 +15,8 @@ const vat = computed(() => (totalPrice.value * 0.2).toFixed(2));
 const grandTotal = computed(() => (Number(totalPrice.value) + Number(vat.value) + 50).toFixed(2));
 
 onMounted(async () => {
-    cart.value = await getCart();
+    getCartItems = useCart().getCart;
+    cart.value = await getCartItems();
 });
 </script>
 
