@@ -47,12 +47,6 @@ export const useCart = () => {
     store.delete(slug);
   };
 
-  // update cart
-  const updateCart = async (slug: string, item: any) => {
-    const store = await callDB();
-    store.put(item, slug);
-  };
-
   // clear cart
   const clearCart = async () => {
     const store = await callDB();
@@ -68,7 +62,6 @@ export const useCart = () => {
   return {
     addToCart,
     removeFromCart,
-    updateCart,
     clearCart,
     getCart,
   };

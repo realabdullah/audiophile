@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 defineEmits(["toggle-cart"]);
 
-const { addToCart, getCart } = useCart();
+const { addToCart, removeFromCart, clearCart, getCart } = useCart();
 const { cart } = storeToRefs(useStore());
 
 const totalPrice = computed(() => {
@@ -12,8 +12,14 @@ const totalPrice = computed(() => {
 
 const updateProductQuantity = async (action: string, slug: string) => {
     const product = cart.value.find((item: { slug: string; }) => item.slug === slug) as Product;
-    if (!product || product.quantity === 1 && action === "decrease") return;
-    await addToCart(product, action);
+    if (!product) return;
+    if (product.quantity === 1 && action === "decrement") await removeFromCart(product.slug);
+    else await addToCart(product, action);
+    cart.value = await getCart();
+};
+
+const clearAll = async () => {
+    await clearCart();
     cart.value = await getCart();
 };
 
@@ -26,37 +32,44 @@ cart.value = await getCart();
             <!-- CART HEADER -->
             <div class="cart__header d-flex align-items-center justify-content-space-between">
                 <h2 class="text-transform-uppercase weight-700">cart ({{ cart.length }})</h2>
-                <button class="cart__header-close">Remove all</button>
+                <button v-if="cart.length > 0" class="cart__header-close" @click="clearAll">Remove all</button>
             </div>
 
             <!-- CART ITEMS -->
-            <div class="cart__items d-flex flex-column">
-                <div v-for="item in cart" class="cart__items-item d-flex align-items-center justify-content-space-between">
-                    <div class="cart__items-item-content d-flex align-items-center">
-                        <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
-                            <img :src="item.image" :alt="item.name">
+            <template v-if="cart.length > 0">
+                <div class="cart__items d-flex flex-column">
+                    <div v-for="item in cart"
+                        class="cart__items-item d-flex align-items-center justify-content-space-between">
+                        <div class="cart__items-item-content d-flex align-items-center">
+                            <div class="cart__items-item-content-image d-flex align-items-center justify-content-center">
+                                <img :src="item.image" :alt="item.name">
+                            </div>
+                            <div class="cart__items-item-content-info d-flex flex-column align-items-start">
+                                <p class="weight-700">{{ item.name }}</p>
+                                <span class="weight-700">$ {{ formatAmount(item.price) }}</span>
+                            </div>
                         </div>
-                        <div class="cart__items-item-content-info d-flex flex-column align-items-start">
-                            <p class="weight-700">{{ item.name }}</p>
-                            <span class="weight-700">$ {{ formatAmount(item.price) }}</span>
-                        </div>
-                    </div>
 
-                    <div class="cart__items-item-count">
-                        <BaseCount usage="cart" :count="item.quantity"
-                            @update-count="updateProductQuantity($event, item.slug)" />
+                        <div class="cart__items-item-count">
+                            <BaseCount usage="cart" :count="item.quantity"
+                                @update-count="updateProductQuantity($event, item.slug)" />
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- CART TOTAL -->
-            <div class="cart__total d-flex align-items-center justify-content-space-between">
-                <p class="weight-500">TOTAL</p>
-                <span class="weight-700">$ {{ formatAmount(totalPrice) }}</span>
-            </div>
+                <!-- CART TOTAL -->
+                <div v-if="cart.length > 0" class="cart__total d-flex align-items-center justify-content-space-between">
+                    <p class="weight-500">TOTAL</p>
+                    <span class="weight-700">$ {{ formatAmount(totalPrice) }}</span>
+                </div>
 
-            <!-- CHECKOUT BTN -->
-            <BaseButton class="checkout w-100" variant="solid" text="checkout" type="link" url="/checkout" />
+                <!-- CHECKOUT BTN -->
+                <BaseButton v-if="cart.length > 0" class="checkout w-100" variant="solid" text="checkout" type="link"
+                    url="/checkout" />
+            </template>
+
+            <!-- EMPTY STATE -->
+            <p v-else class="empty weight-500">Cart is empty!</p>
         </div>
     </div>
 
@@ -146,6 +159,11 @@ cart.value = await getCart();
                 }
             }
         }
+    }
+
+    .empty {
+        @include font(1.7rem, 2.5rem);
+        color: $col-black;
     }
 
     &__total {

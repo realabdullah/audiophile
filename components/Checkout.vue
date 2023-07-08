@@ -14,7 +14,9 @@ const vat = computed(() => (totalPrice.value * 0.2).toFixed(2));
 
 const grandTotal = computed(() => (Number(totalPrice.value) + Number(vat.value) + 50).toFixed(2));
 
-cart.value = await getCart();
+onMounted(async () => {
+    cart.value = await getCart();
+});
 </script>
 
 <template>

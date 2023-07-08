@@ -18,7 +18,7 @@ const mutateCount = (type: CountEmits) => emits("update-count", type);
 <template>
     <div class="count d-flex align-items-center justify-content-center"
         :style="`width: ${usage === 'page' ? '14rem' : '8rem'}`">
-        <button @click="mutateCount('decrement')" :class="{ 'in-active': count <= 1 }" :disabled="count <= 1">-</button>
+        <button @click="mutateCount('decrement')">-</button>
         <span>{{ count }}</span>
         <button @click="mutateCount('increment')">+</button>
     </div>
@@ -45,10 +45,6 @@ const mutateCount = (type: CountEmits) => emits("update-count", type);
     span {
         color: $col-black;
         @include font(1.3rem, 1.7rem);
-    }
-
-    .in-active {
-        cursor: not-allowed;
     }
 }
 </style>

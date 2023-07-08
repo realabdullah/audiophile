@@ -11,7 +11,7 @@ interface Product {
 };
 
 const route = useRoute();
-const product = ref<Product | null>(null);
+const product = ref();
 
 const { data, error } = await useFetch(`/api/product/${route.params.slug}`);
 if (error.value) {

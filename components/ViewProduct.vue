@@ -4,7 +4,7 @@ const props = defineProps<{
 }>();
 
 const router = useRouter();
-const { addToCart } = useCart();
+let addToCart: (product: Product) => Promise<void>;
 const count = ref(1);
 
 const updateProductQuantity = (action: string) => {
@@ -17,6 +17,10 @@ const addProductToCart = async () => {
     await addToCart(productToAdd);
     count.value = 1;
 };
+
+onMounted(() => {
+    addToCart = useCart().addToCart;
+});
 </script>
 
 <template>
